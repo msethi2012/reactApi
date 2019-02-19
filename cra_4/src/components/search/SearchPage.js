@@ -8,9 +8,6 @@ class SearchPage extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
-
-
-
   render() {
     const {news} = this.props;
 
@@ -27,7 +24,7 @@ class SearchPage extends React.Component {
 }
 
 SearchPage.propTypes = {
-  news: PropTypes.array.isRequired,
+  news: PropTypes.array,
   actions: PropTypes.object.isRequired
 };
 
