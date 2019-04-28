@@ -10,6 +10,7 @@ export function loadNews() {
   return dispatch => {
     dispatch(beginAjaxCall());
     return NewsApi.getAllNews().then(news => {
+      console.log("news--",news);
       dispatch(loadNewsSuccess(news));
     }).catch(error => {
       throw(error);

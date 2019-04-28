@@ -8,12 +8,16 @@ class SearchPage extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
+
+  componentDidMount(){
+    this.props.actions.loadNews();
+    console.log("this.props",this.props);
+  }
   render() {
     const {news} = this.props;
-
     return (
       <div>
-        <h1>News</h1>
+        <h1>News{news.toString()}</h1>
         <input type="submit"
                value="Add News"
                className="btn btn-primary"
@@ -40,4 +44,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
+export default connect(mapStateToProps,mapDispatchToProps)(SearchPage);
